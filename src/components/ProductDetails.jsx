@@ -30,20 +30,29 @@ const ProductDetails = () => {
     const product=Data1.find(ele=>ele.id===Number(id))
     const cartItemss=cartItems.find(ele=>ele.id===product.id)
   return (
-    <div>
-       <div className='flex'>
+    <div className='flex flex-col justify-center items-center h-[70vh]'>
+       <div className='flex gap-4'>
         <div>
-        <img src={product.img} alt=""  className='h-50 w-50'/>
+        <img src={product.img} alt=""  className='h-90 w-70 rounded-lg shadow-2xl'/>
        </div>
-       <div>
-        <img src={product.img} alt=""  className='h-50 w-50'/>
+       <div className='flex flex-col gap-3 w-90 p-3 rounded-lg shadow-2xl'>
+        <p>{product.desc}</p>
+        <div className='flex gap-2 items-center'>
+          <p className='text-2xl font-semibold  border border-gray-400 text-black '>{product.price}</p>
+          <p className='text-sm font-bold text-gray-500  line-through'>{product.preprice}</p>
+          <p className='text-blue-800 font-semibold text-lg'>{product.off}</p>
+
+
+        </div>
+        <p></p>
        </div>
        </div>
 
        {
         !cartItemss?(
-            <div>
+            <div className='flex gap-3'>
                 <button onClick={()=>addToCart(product)} className='p-3 bg-amber-500'>Add to Card</button>
+                 <button onClick={()=>addToCart(product)} className='p-3 text-white bg-blue-800'>Buy now</button>
             </div>
         ):
         (

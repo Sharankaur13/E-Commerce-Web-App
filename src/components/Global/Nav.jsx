@@ -44,7 +44,7 @@ const Nav = () => {
   {showDropdown && (
     <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md flex flex-col z-50">
 
-      <NavLink to="/mens" className="px-4 py-2 hover:bg-gray-100">Mens
+      <NavLink to="/mens" className="px-4 py-2 hover:bg-gray-100" >Mens
       </NavLink>
 
       <NavLink to="/womens" className="px-4 py-2 hover:bg-gray-100">

@@ -6,6 +6,7 @@ import Price from './App/Price/Price'
 import Cart from './App/Cart/Cart'
 import Login from './components/Login/Login'
 import ProductDetails from './components/ProductDetails'
+import Mens from './App/Mens/Mens'
 
 
 
@@ -33,6 +34,19 @@ const router=createBrowserRouter([
 
       
     },
+    {
+      path:"/mens",
+      element:<Mens/>,
+
+      
+    },
+    {
+      path:"/mens/:id",
+      element:<ProductDetails/>,
+
+      
+    },
+
        {
       path:"/price",
       element:<Price/>,
