@@ -7,6 +7,10 @@ import Cart from './App/Cart/Cart'
 import Login from './components/Login/Login'
 import ProductDetails from './components/ProductDetails'
 import Mens from './App/Mens/Mens'
+import Appdeal from './App/Dealapp/Appdeal'
+import Women from './App/Women/Women'
+
+
 
 
 
@@ -46,6 +50,18 @@ const router=createBrowserRouter([
 
       
     },
+    {
+      path:"/womens",
+      element:<Women/>,
+
+      
+    },
+    {
+      path:"/womens/:id",
+      element:<ProductDetails/>,
+
+      
+    },
 
        {
       path:"/price",
@@ -63,6 +79,10 @@ const router=createBrowserRouter([
     {
       path:"/login",
       element:<Login/>
+    },
+    {
+      path:'/deal',
+      element:<Appdeal/>
     }
    ]
   }

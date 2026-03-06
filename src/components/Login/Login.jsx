@@ -1,7 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+   const navigate = useNavigate()
+  const handleGoBack=()=>{
+    navigate(-1)
+  }
   return (
+    <div>
+      <button onClick={handleGoBack} className=' text-black bg-gray-300 p-2 m-1'>Back </button>
     <div className='flex justify-center items-center h-full '>
       <form action="" className='p-4 flex flex-col gap-3 border bg-gray-400 '>
         <div className='flex flex-col gap-1'>
@@ -23,6 +30,7 @@ const Login = () => {
 
 
       </form>
+    </div>
     </div>
   )
 }

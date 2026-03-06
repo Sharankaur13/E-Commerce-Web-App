@@ -46,12 +46,16 @@ const Data = () => {
 
 
   return (
-   <div className=''>
-     <div className='grid grid-cols-3  gap-5 m-10 '>
+   <div className='bg-olive-100 '>
+     <div className='grid grid-cols-3  gap-5 p-15 '>
         {
             Data1.map(ele=>(
-                <div key={ele.id} className=' w-80  flex flex-col gap-4 items-center bg-white rounded-sm shadow-lg text-center p-3 '>
-                  <Link to={`${ele.id}` }> <img src={ele.img} alt="" className='w-60 h-70 rounded-lg' /></Link>
+                <div key={ele.id} className='   flex flex-col gap-4 items-center bg-white rounded-sm shadow-lg text-center p-3 '>
+                  <Link to={`${ele.id}` }> <img 
+  src={Array.isArray(ele.img) ? ele.img[0] : ele.img} 
+  alt="" 
+  className='h-70 w-70 rounded-lg ' 
+/></Link>
                     
                         <p className='text-sm px-0.5'>{ele.desc}</p>
                         <div className='flex items-center gap-6'>
@@ -64,6 +68,7 @@ const Data = () => {
 
 
                             </div>
+                         
                            <div className='flex flex-col '>
                              <p className='text-sm text-gray-400  line-through'>{ele.preprice}
 
@@ -76,7 +81,7 @@ const Data = () => {
 
                         </div>
         
-                    <Link to={`${ele.id}` } className='p-1 bg-blue-300' >{ele.btn}</Link>
+                    <Link to={`${ele.id}` } className='p-3  rounded-2xl border border-pink-400' >{ele.btn}</Link>
                     {/* <button onClick={()=>addToCart(ele)} className='p-2 bg-amber-500'>{ele.btn}</button> */}
 
                 </div>

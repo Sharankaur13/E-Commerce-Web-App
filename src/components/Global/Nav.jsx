@@ -7,6 +7,7 @@ import { CartContext } from '../createContext'
 import { HiShoppingBag } from 'react-icons/hi'
 import { FaRegCircleUser } from 'react-icons/fa6'
 
+
 const Nav = () => {
   const {cartItems}=useContext(CartContext)
   const [showDropdown, setShowDropdown] = useState(false)
@@ -15,6 +16,10 @@ const Nav = () => {
         element:'Home',
         path:'/'
     },
+    {
+      element:'Deal',
+      path:'/deal'
+    }
    
     // {
     //     element:'Price',
@@ -29,9 +34,9 @@ const Nav = () => {
 
   
   return (
-    <div>
-      <div className='  '>
-    <div className='p-10  flex justify-around items-center'>
+    <div className='sticky top-0 z-50'>
+      <nav className=' bg-white shadow-md'>
+    <div className='max-w-7xl mx-auto px-6 py-6 flex items-center justify-between '>
       
 <div className="relative">
 
@@ -41,7 +46,8 @@ const Nav = () => {
   </button>
 
  
-  {showDropdown && (
+  {
+  showDropdown && (
     <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md flex flex-col z-50">
 
       <NavLink to="/mens" className="px-4 py-2 hover:bg-gray-100" >Mens
@@ -56,7 +62,8 @@ const Nav = () => {
 
       <NavLink to="/home" className="px-4 py-2 hover:bg-gray-100">Home</NavLink>
 </div>
-  )}
+  )
+  }
 
 </div>
 
@@ -71,19 +78,27 @@ const Nav = () => {
         </div>
 
     <div>
-      <form action="" className='flex gap-2'>
-        <input type="search" placeholder='Search item here ' className='border p-2 w-96' />
-        <CiSearch className='h-10 w-7 border'/>
+      <form action="" className='  '>
+        <div className='relative'>
+          <CiSearch className='h-10 w-7 absolute left-2 font-bold  '/>
+          <input type="search" placeholder='Search item here ' className=' relative  text-center p-2 w-85 border-2 rounded focus:outline-none focus:ring-2 focus:ring-offset-orange-600 transition' />
+        
+        </div>
 
 
       </form>
     </div>
- <div className=' hidden md:flex gap-7'>
+ <div className=' hidden md:flex gap-4'>
     {
         navData.map(ele=>(
-            <NavLink to={ele.path} className='p-1 text-lg  rounded hover:bg-stone-600 underline'>
+          
+            <NavLink to={ele.path} className='p-2 text-lg font-semibold  rounded hover:bg-gray-100 underline '>
               {ele.element}  
             </NavLink>
+            
+            
+            
+            
           //   <NavLink to={ele.path} className={({ isActive }) = `${isActive ? "text-red-700 font-semibold" : ""}`
           //   }>
           //   {ele.element}
@@ -91,11 +106,11 @@ const Nav = () => {
 
         ))
     }
-     <div className='flex flex-col items-center '>
+     <div className=' '>
       {
         <NavLink to={'/login'}><FaRegCircleUser className='h-8 w-8' /></NavLink>
       }
-      <p className='text-sm '>Login</p>
+      
 
     </div>
     <div className='relative'>
@@ -121,7 +136,7 @@ const Nav = () => {
  </div>
 
     </div>
-    </div>
+    </nav>
 
     
     </div>
