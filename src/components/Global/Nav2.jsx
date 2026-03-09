@@ -6,112 +6,135 @@ import { NavLink } from 'react-router-dom'
 import { CartContext } from '../createContext'
 import { HiShoppingBag } from 'react-icons/hi'
 import { FaRegCircleUser } from 'react-icons/fa6'
+import { FiMenu } from "react-icons/fi"
 
 const Nav2 = () => {
-  const { cartItems } = useContext(CartContext)
+
+  const { cartItems, wishlist } = useContext(CartContext)
+
   const [showDropdown, setShowDropdown] = useState(false)
+  const [mobileMenu, setMobileMenu] = useState(false)
 
   const navData = [
     { element: 'Home', path: '/' },
-    { element: 'Deal', path: '/deal' },
+    { element: 'Deal', path: '/deal' }
   ]
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div className='sticky top-0 z-50'>
 
-        {/* Left Section */}
-        <div className="flex items-center gap-6">
+      <nav className='bg-white shadow-md'>
 
-          {/* Categories Dropdown */}
-          <div className="relative">
+        <div className='max-w-7xl mx-auto px-4 py-4 flex items-center justify-between'>
+
+          {/* LEFT SECTION */}
+          <div className='flex items-center gap-4'>
+
+            {/* MOBILE MENU BUTTON */}
             <button
-              onClick={() => setShowDropdown(!showDropdown)}
-              className="px-5 py-2 border rounded-full text-sm font-medium hover:bg-gray-100 transition"
+              onClick={() => setMobileMenu(!mobileMenu)}
+              className='md:hidden text-2xl'
             >
-              Categories
+              <FiMenu />
             </button>
 
-            {showDropdown && (
-              <div className="absolute mt-3 w-48 bg-white shadow-xl rounded-xl overflow-hidden animate-fadeIn">
-                <NavLink to="/mens" className="block px-4 py-3 hover:bg-gray-100">Mens</NavLink>
-                <NavLink to="/womens" className="block px-4 py-3 hover:bg-gray-100">Womens</NavLink>
-                <NavLink to="/kids" className="block px-4 py-3 hover:bg-gray-100">Kids</NavLink>
-                <NavLink to="/home" className="block px-4 py-3 hover:bg-gray-100">Home</NavLink>
-              </div>
-            )}
+            {/* CATEGORY DROPDOWN */}
+            <div className="relative hidden md:block">
+              <button
+                onClick={() => setShowDropdown(!showDropdown)}
+                className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+              >
+                Categories
+              </button>
+
+              {showDropdown && (
+                <div className="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md flex flex-col z-50">
+                  <NavLink to="/mens" className="px-4 py-2 hover:bg-gray-100">Mens</NavLink>
+                  <NavLink to="/womens" className="px-4 py-2 hover:bg-gray-100">Womens</NavLink>
+                  <NavLink to="/kids" className="px-4 py-2 hover:bg-gray-100">Kids</NavLink>
+                  <NavLink to="/home" className="px-4 py-2 hover:bg-gray-100">Home</NavLink>
+                </div>
+              )}
+            </div>
+
+            {/* LOGO */}
+            <div className='flex items-center gap-1'>
+              <HiShoppingBag className='w-8 h-8 text-red-700' />
+              <h2 className='text-xl md:text-2xl font-bold'>SnapDeal</h2>
+            </div>
+
           </div>
 
-          {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer">
-            <HiShoppingBag className="w-8 h-8 text-red-600" />
-            <h2 className="text-2xl font-bold tracking-wide text-gray-800">
-              Snap<span className="text-red-600">Deal</span>
-            </h2>
+          {/* SEARCH BAR */}
+          <div className='hidden md:block w-1/2'>
+            <div className='relative flex items-center'>
+              <CiSearch className='h-6 w-6 absolute left-3' />
+              <input
+                type="search"
+                placeholder='Search item here'
+                className='w-full p-2 pl-10 border rounded'
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Search Bar */}
-        <div className="hidden md:flex flex-1 mx-10">
-          <div className="relative w-full">
-            <CiSearch className="absolute left-4 top-3 text-gray-500 text-xl" />
-            <input
-              type="search"
-              placeholder="Search products..."
-              className="w-full pl-12 pr-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-red-500 transition"
-            />
-          </div>
-        </div>
+          {/* RIGHT ICONS */}
+          <div className='flex items-center gap-4'>
 
-        {/* Right Section */}
-        <div className="flex items-center gap-6">
-
-          {/* Nav Links */}
-          {navData.map((ele, index) => (
-            <NavLink
-              key={index}
-              to={ele.path}
-              className={({ isActive }) =>
-                `text-lg font-medium hover:text-red-600 transition ${
-                  isActive ? 'text-red-600' : 'text-gray-700'
-                }`
-              }
-            >
-              {ele.element}
-            </NavLink>
-          ))}
-
-          {/* User Icon */}
-          <NavLink to="/login">
-            <FaRegCircleUser className="h-6 w-6 text-gray-700 hover:text-red-600 transition" />
-          </NavLink>
-
-          {/* Cart */}
-          <div className="relative">
-            <NavLink to="/cart">
-              <IoCart className="h-7 w-7 text-gray-700 hover:text-red-600 transition" />
+            {/* USER */}
+            <NavLink to='/login'>
+              <FaRegCircleUser className='h-7 w-7' />
             </NavLink>
 
-            {cartItems.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+            {/* CART */}
+            <div className='relative'>
+              <NavLink to='/cart'>
+                <IoCart className='h-7 w-7' />
+              </NavLink>
+              <span className='absolute -top-2 -right-2 h-5 w-5 rounded bg-amber-500 flex justify-center items-center text-xs'>
                 {cartItems.length}
               </span>
-            )}
+            </div>
+
+            {/* WISHLIST */}
+            <div className='relative'>
+              <NavLink to='/wishlist'>
+                <FaRegHeart className='h-7 w-7' />
+              </NavLink>
+
+              <span className='absolute -top-2 -right-2 h-5 w-5 rounded bg-red-500 text-white flex justify-center items-center text-xs'>
+                {wishlist?.length || 0}
+              </span>
+            </div>
+
           </div>
 
-          {/* Wishlist */}
-          <NavLink to="/wishlist">
-            <FaRegHeart className="h-6 w-6 text-gray-700 hover:text-red-600 transition" />
-          </NavLink>
-
-          {/* Download Button */}
-          <button className="hidden md:block px-5 py-2 bg-red-600 text-white rounded-full hover:bg-red-700 transition shadow-md">
-            Download App
-          </button>
-
         </div>
-      </div>
-    </nav>
+
+        {/* MOBILE MENU */}
+        {mobileMenu && (
+          <div className='md:hidden flex flex-col gap-3 p-4 bg-white border-t'>
+
+            {navData.map((ele, index) => (
+              <NavLink
+                key={index}
+                to={ele.path}
+                className='text-lg font-semibold'
+              >
+                {ele.element}
+              </NavLink>
+            ))}
+
+            <NavLink to='/mens'>Mens</NavLink>
+            <NavLink to='/womens'>Womens</NavLink>
+            <NavLink to='/kids'>Kids</NavLink>
+            <NavLink to='/home'>Home</NavLink>
+
+          </div>
+        )}
+
+      </nav>
+
+    </div>
   )
 }
 

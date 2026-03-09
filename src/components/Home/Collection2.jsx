@@ -84,7 +84,7 @@ const Collection2 = () => {
 
   return (
     <section>
-      <div className='max-w-7xl mx-auto px-6 pt-6 flex justify-between'>
+      <div className='max-w-7xl mx-auto px-6 pt-6 hidden md:flex justify-between'>
 
         {data.map((ele, index) => (
           
@@ -97,13 +97,13 @@ const Collection2 = () => {
             </NavLink>
 
             {/* Dropdown */}
-            <div className='absolute z-50 hidden group-hover:block text-black shadow-lg p-4 top-12 min-w-[150px]'>
+            <div className='absolute z-50 hidden group-hover:flex flex-col gap-3 justify-center  w-40 h-50 bg-white text-black shadow-lg p-4 top-12 '>
 
               {ele.submenu.map((item, i) => (
                 <NavLink
                   key={i}
                   to={item.path}
-                  className='block py-1 text-sm hover:text-red-600'
+                  className='block py-1 text-sm  hover:text-red-300'
                 >
                   {item.name}
                 </NavLink>

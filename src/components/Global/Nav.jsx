@@ -36,7 +36,7 @@ const Nav = () => {
   return (
     <div className='sticky top-0 z-50'>
       <nav className=' bg-white shadow-md'>
-    <div className='max-w-7xl mx-auto px-6 py-6 flex items-center justify-between '>
+    <div className='max-w-7xl mx-auto px-6 py-6 flex items-center gap-5 '>
       
 <div className="relative">
 
@@ -79,9 +79,9 @@ const Nav = () => {
 
     <div>
       <form action="" className='  '>
-        <div className='relative'>
+        <div className='relative flex items-center'>
           <CiSearch className='h-10 w-7 absolute left-2 font-bold  '/>
-          <input type="search" placeholder='Search item here ' className=' relative  text-center p-2 w-85 border-2 rounded focus:outline-none focus:ring-2 focus:ring-offset-orange-600 transition' />
+          <input type="search" placeholder='Search item here ' className=' relative   text-center p-2 w-110 h-13 border border-mauve-600 rounded ' />
         
         </div>
 

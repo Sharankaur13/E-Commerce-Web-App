@@ -64,10 +64,10 @@ const {cartItems,removeFromCart}=useContext(CartContext)
 </div>
 
             :
-            <div className='flex gap-5'>
+            <div className='flex gap-5 items-center justify-center '>
               {
             cartItems.map(ele=>(
-                <div key={ele.id} className='h-[300px] w-50 border flex flex-col items-center justify-center'>
+                <div key={ele.id} className='h-[300px] w-50 border flex flex-col h-full items-center justify-center'>
                     <img 
   src={Array.isArray(ele.img) ? ele.img[0] : ele.img} 
   alt="" 

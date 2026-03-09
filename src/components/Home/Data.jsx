@@ -2,10 +2,13 @@ import React, { useContext } from 'react'
 import { CartContext } from '../createContext'
 import { DataContext } from '../DataContext'
 import { Link } from 'react-router-dom'
+import { FaHeart, FaRegHeart } from 'react-icons/fa'
 // import { Link } from 'react-router-dom'
 
 
 const Data = () => {
+
+  
 //   const product=[
   
 //     {
@@ -47,7 +50,7 @@ const Data = () => {
 
   return (
    <div className='bg-olive-100 '>
-     <div className='grid grid-cols-3  gap-5 p-15 '>
+     <div className='grid md:grid-cols-3 grid-col-1  gap-5 p-15 '>
         {
             Data1.map(ele=>(
                 <div key={ele.id} className='   flex flex-col gap-4 items-center bg-white rounded-sm shadow-lg text-center p-3 '>
@@ -56,6 +59,10 @@ const Data = () => {
   alt="" 
   className='h-70 w-70 rounded-lg ' 
 /></Link>
+
+
+
+
                     
                         <p className='text-sm px-0.5'>{ele.desc}</p>
                         <div className='flex items-center gap-6'>

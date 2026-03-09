@@ -64,9 +64,23 @@ useEffect(() => {
   return () => clearInterval(timer);
 }, [images.length]);
   return (
-    <div>
+    <div className=''>
+
+       <div className="flex flex-col gap-2">
+    {images.map((img, index) => (
+      <img
+        key={index}
+        src={img}
+        onClick={() => setCurrentIndex(index)}
+        className={`h-16 w-16 object-cover cursor-pointer border-2
+        ${currentIndex === index ? "border-blue-600" : "border-gray-300"}`}
+      />
+    ))}
+  </div>
+
+
       <button onClick={handleGoBack} className=' text-black '><FaLeftLong/></button>
-    <div className='flex flex-col  justify-center items-center h-[70vh]'>
+    <div className='flex flex-col  relative justify-center items-center h-[70vh]'>
        <div className='flex gap-4 relative'>
         <div className='relative'>
        <img  src={images[currentIndex]}  alt="" className='h-90 w-70 rounded-lg shadow-2xl'/>
@@ -118,7 +132,7 @@ useEffect(() => {
             </div>
         ):
         (
-         <div className='flex gap-4 items-center'>
+         <div className='flex items-start gap-3'>
             <button onClick={()=>decreaseQty(cartItemss.id)} className='p-3 bg-amber-500'>-</button>
             <p>{cartItemss.quantity}</p>
            <button onClick={()=>increaseQty(cartItemss.id)} className='p-3 bg-amber-500'>+</button>

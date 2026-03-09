@@ -11,7 +11,8 @@ const MensClothes = () => {
             ClothesMens.map(ele=>(
                 
                    
-                    <div key={ele.id} className=' w-80  flex flex-col gap-4 items-center bg-white rounded-sm shadow-lg text-center p-3 '>
+                    <div key={ele.id} className=' w
+                    -80  flex flex-col gap-4 items-center bg-white rounded-sm shadow-lg text-center p-3 '>
                   <Link to={`${ele.id}` }> <img src={ele.img} alt="" className='w-60 h-70 rounded-lg' /></Link>
                     
                         <p className='text-sm px-0.5'>{ele.desc}</p>

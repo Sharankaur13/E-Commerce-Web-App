@@ -3,7 +3,9 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import CartProvider from '../createContext'
 import DataProvider from '../DataContext'
-import Nav2 from './Nav2'
+
+
+import Footer from './Footer'
 import Nav from './Nav'
 
 const Layout = () => {
@@ -14,6 +16,7 @@ const Layout = () => {
            <Nav/>
           {/* <Nav2/> */}
          <Outlet/>
+         <Footer/>
         </DataProvider>
         
 
