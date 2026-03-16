@@ -66,7 +66,14 @@ useEffect(() => {
   return (
     <div className=''>
 
-       <div className="flex flex-col gap-2">
+       
+
+
+      <button onClick={handleGoBack} className=' text-black '><FaLeftLong/></button>
+    <div className='flex flex-col  relative justify-center items-center h-[70vh]'>
+
+       <div className='flex gap-4 relative'>
+        <div className="flex flex-col gap-2">
     {images.map((img, index) => (
       <img
         key={index}
@@ -77,16 +84,11 @@ useEffect(() => {
       />
     ))}
   </div>
-
-
-      <button onClick={handleGoBack} className=' text-black '><FaLeftLong/></button>
-    <div className='flex flex-col  relative justify-center items-center h-[70vh]'>
-       <div className='flex gap-4 relative'>
         <div className='relative'>
        <img  src={images[currentIndex]}  alt="" className='h-90 w-70 rounded-lg shadow-2xl'/>
        </div>
-       <FaArrowLeft onClick={prevSlide} className='absolute top-1/2 h-7 w-9 rounded-2xl text-white ' />
-             <FaArrowRight onClick={nextSlide} className='absolute top-1/2 left-60 h-7 w-9 text-black'/>
+       <FaArrowLeft onClick={prevSlide} className='absolute top-1/2 h-7 w-9 left-20 rounded-2xl text-black ' />
+             <FaArrowRight onClick={nextSlide} className='absolute top-1/2 left-80 h-7 w-9 text-black'/>
        <div className='flex flex-col gap-4  w-90 p-3 rounded-lg shadow-2xl'>
         <p>{product.desc}</p>
         

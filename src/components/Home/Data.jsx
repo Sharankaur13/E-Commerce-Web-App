@@ -44,21 +44,44 @@ const Data = () => {
   
 //   ]
 
-  const {addToCart}=useContext(CartContext)
+  const {addToCart,wishlist,toggleWishlist}=useContext(CartContext)
   const{Data1}=useContext(DataContext)
 
 
   return (
    <div className='bg-olive-100 '>
-     <div className='grid md:grid-cols-3 grid-col-1  gap-5 p-15 '>
+     <div className='grid md:grid-cols-3 grid-col-1  gap-5 p-15  '>
         {
             Data1.map(ele=>(
-                <div key={ele.id} className='   flex flex-col gap-4 items-center bg-white rounded-sm shadow-lg text-center p-3 '>
+                <div key={ele.id} className='   flex flex-col gap-4 items-center bg-white rounded-sm shadow-lg text-center p-3 relative  '>
                   <Link to={`${ele.id}` }> <img 
   src={Array.isArray(ele.img) ? ele.img[0] : ele.img} 
   alt="" 
-  className='h-70 w-70 rounded-lg ' 
-/></Link>
+  className='h-70 w-70 rounded-lg ' /></Link>
+
+  {/* Heart for wishlist */}
+<div className='absolute right-15 top-5 cursor-pointer'>
+
+{
+wishlist.some(item => item.id === ele.id) ?
+
+<FaHeart
+onClick={() => toggleWishlist(ele)}
+className='h-6 w-6 text-red-500'
+/>
+
+:
+
+<FaRegHeart
+onClick={() => toggleWishlist(ele)}
+className='h-6 w-6 text-gray-400'
+/>
+
+}
+
+</div>
+
+
 
 
 

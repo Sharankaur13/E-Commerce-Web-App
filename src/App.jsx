@@ -9,6 +9,7 @@ import ProductDetails from './components/ProductDetails'
 import Mens from './App/Mens/Mens'
 import Appdeal from './App/Dealapp/Appdeal'
 import Women from './App/Women/Women'
+import HeroWishlist from './components/Wishlist/Wishlist'
 
 
 
@@ -76,6 +77,13 @@ const router=createBrowserRouter([
 
       
     },
+    {
+      path:"/wishlist",
+      element:<HeroWishlist/>,
+
+      
+    },
+
     {
       path:"/login",
       element:<Login/>

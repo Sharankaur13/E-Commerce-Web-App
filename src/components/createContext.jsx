@@ -3,6 +3,9 @@ export const CartContext=createContext()
 
 const CartProvider = ({children}) => {
     const[cartItems,setCartItems]=useState([])
+    const [wishlist, setWishlist] = useState([])
+    
+
     const addToCart=(items)=>{
         setCartItems(prev=>{
           const existingItems=prev.find(ele=>ele.id===items.id)
@@ -40,8 +43,19 @@ const CartProvider = ({children}) => {
             )
           )
         }
+        const toggleWishlist = (product) => {
+    setWishlist(prev => {
+      const exist = prev.find(item => item.id === product.id)
+
+      if (exist) {
+        return prev.filter(item => item.id !== product.id)
+      } else {
+        return [...prev, product]
+      }
+    })
+  }
   return (
-    <CartContext.Provider value={{cartItems,addToCart,removeFromCart,increaseQty,decreaseQty}}>
+    <CartContext.Provider value={{cartItems,addToCart,removeFromCart,increaseQty,decreaseQty,toggleWishlist,wishlist}}>
     {children}
       
     </CartContext.Provider>

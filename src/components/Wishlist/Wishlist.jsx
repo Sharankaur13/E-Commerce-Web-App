@@ -26,8 +26,7 @@ Browse Category
 
 <NavLink
 to='/'
-className='w-70 bg-rose-700 text-white flex justify-center items-center text-center h-10 cursor-pointer font-bold text-lg'
->
+className='w-70 bg-rose-700 text-white flex justify-center items-center text-center h-10 cursor-pointer font-bold text-lg'>
 START SHOPPING NOW
 </NavLink>
 
@@ -36,43 +35,85 @@ START SHOPPING NOW
 
 :
 
-<div className='flex gap-5 items-center justify-center flex-wrap'>
+<div className=''>
 
 {
 wishlist.map(ele => (
 
 <div
 key={ele.id}
-className='h-[300px] w-50 border flex flex-col items-center justify-center relative'
->
+className='flex flex-col gap-4 justify-center items-center   py-10 '>
 
 {/* HEART ICON */}
-<FaHeart
+
+<div className='flex gap-3 relative  '>
+    <FaHeart
 onClick={() => toggleWishlist(ele)}
-className="absolute top-3 right-3 text-red-500 cursor-pointer text-xl"
+className="absolute top-2 left-8 text-red-500 cursor-pointer text-xl"
 />
 
-<img
+<div>
+    <img
 src={Array.isArray(ele.img) ? ele.img[0] : ele.img}
 alt=""
-className='w-60 h-70 rounded-lg'
+className='w-80 h-80 rounded-lg'
 />
+</div>
 
-<p className='text-sm text-center px-2'>{ele.desc}</p>
+<div className='flex flex-col text-center p-4 gap-5  shadow-2xl w-80 h-80'>
+    <p className='text-sm '>{ele.desc}</p>
+     <div className='flex gap-2 items-center'>
+          <p className='text-2xl font-semibold  border border-gray- text-black '>{ele.price}</p>
+          <p className='text-sm font-bold text-gray-500  line-through'>{ele.preprice}</p>
+          <p className='text-blue-800 font-semibold text-lg'>{ele.off}</p>
+          </div>
+
+          <div className='grid grid-cols-4 gap-3'>
+         <div className='flex flex-col  items-center border w-15 h-13 bg-gray-50 rounded-2xl cursor-pointer'>
+          <p className=' text-xl font-bold '>{ele.size}</p>
+          <p className='text-sm'>{ele.pr}</p>
+
+         </div>
+          <div className='flex flex-col  items-center border w-15 h-13 bg-gray-50 rounded-2xl cursor-pointer'>
+          <p className=' text-xl font-bold '>{ele.size2}</p>
+          <p className='text-sm'>{ele.pr2}</p>
+
+         </div>
+           <div className='flex flex-col  items-center border w-15 h-13 bg-gray-50 rounded-2xl cursor-pointer'>
+          <p className=' text-xl font-bold '>{ele.size3}</p>
+          <p className='text-sm'>{ele.pr2}</p>
+
+         </div>
+           <div className='flex flex-col  items-center border w-15 h-13 bg-gray-50 rounded-2xl cursor-pointer'>
+          <p className=' text-xl font-semibold '>{ele.size4}</p>
+          <p className='text-sm'>{ele.pr2}</p>
+
+         </div>
+         <div className='flex flex-col  items-center border w-15 h-13 bg-gray-50 rounded-2xl cursor-pointer'>
+          <p className=' text-xl font-semibold '>{ele.size5}</p>
+          <p className='text-sm'>{ele.pr2}</p>
+
+         </div>
+        </div>
+
+
 
 <button
 onClick={() => toggleWishlist(ele)}
-className='p-2 bg-rose-500 text-white rounded'
+className='p-2 bg-rose-500  text-white rounded'
 >
 Remove from Wishlist
 </button>
+</div>
 
+</div>
 </div>
 
 ))
 }
 
 </div>
+
 
 }
 

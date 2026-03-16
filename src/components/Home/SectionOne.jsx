@@ -5,9 +5,9 @@ import { LuAlarmClockCheck } from 'react-icons/lu'
 const SectionOne = () => {
   return (
     <div>
-      <div className=' m-10 w- p-4 h-25 flex gap-6 justify-center  bg-black rounded-sm'>
-        <div className='flex w-80 gap-6 bg-white p-2 justify-center  rounded'>
-          <FaPeopleCarry className='h-16 w-10 text-blue-950' />
+      <div className=' m-10  p-4 md:h-25 flex flex-col md:flex-row gap-6 items-center justify-center  bg-black rounded-sm'>
+        <div className='flex w-60 md:w-80 gap-6 bg-white p-2 justify-center  rounded'>
+          <FaPeopleCarry className='h-10 w-7  md:h-16 md:w-10 text-blue-950' />
           <div className='flex flex-col '>
             <h3 className='text-xl text-blue-900 font-bold'>Free Delivery</h3>
             <p className='text-lg text-blue-950'>On all Others</p>
@@ -15,8 +15,8 @@ const SectionOne = () => {
 
 
         </div>
-        <div className='flex w-80 gap-6 bg-white p-2 justify-center  rounded'>
-          <LuAlarmClockCheck className='h-16 w-10 text-blue-950' />
+        <div className='flex w-60 md:w-80 gap-6 bg-white p-2 justify-center  rounded'>
+          <LuAlarmClockCheck className='h-10 w-7 md:h-16 md:w-10 text-blue-950' />
           <div className='flex flex-col '>
             <h3 className='text-xl text-blue-900 font-bold'>7 days</h3>
             <p className='text-lg text-blue-950'>Easy Returns</p>
@@ -24,8 +24,8 @@ const SectionOne = () => {
 
 
         </div>
-         <div className='flex w-80 gap-6 bg-white p-2 justify-center  rounded'>
-          <FaRegGrinStars className='h-16 w-10 text-blue-950' />
+         <div className='flex w-60 md:w-80 gap-6 bg-white p-2 justify-center  rounded'>
+          <FaRegGrinStars className='h-10 w-7 md:h-16 md:w-10 text-blue-950' />
           <div className='flex flex-col '>
             <h3 className='text-xl text-blue-900 font-bold'>Great Quality at</h3>
             <p className='text-lg text-blue-950'>Best Prices</p>

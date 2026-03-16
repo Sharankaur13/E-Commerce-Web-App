@@ -7,19 +7,20 @@ const Hero = () => {
 
   const data = [
     {
+      id:1,
       img: "/hero3.jpeg",
-      head: "New Fashion Collection",
-      desc: "Discover trendy outfits for every season"
+      
+     
     },
     {
+      id:2,
       img: "/makeup.jpg",
-      head: "Beauty Products",
-      desc: "Premium makeup for glowing skin"
+     
     },
     {
-      img: "/heroshoe.png",
-      head: "Stylish Shoes",
-      desc: "Comfortable and fashionable footwear"
+      id:3,
+      img: "/hh4.jpg",
+    
     }
   ];
 
@@ -77,12 +78,12 @@ const Hero = () => {
         {/* Slider Lines */}
         <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-3">
 
-          {data.map((_, index) => (
+          {data.map((_, id) => (
             <button
-              key={index}
+              key={id}
               onClick={() => setCurrentIndex(index)}
               className={`h-[4px] w-10 rounded transition-transform duration-500
-              ${currentIndex === index ? "bg-white" : "bg-white/50"}`}
+              ${currentIndex ===id ? "bg-white" : "bg-white/50"}`}
             />
           ))}
 

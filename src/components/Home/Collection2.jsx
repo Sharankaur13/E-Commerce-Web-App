@@ -103,8 +103,7 @@ const Collection2 = () => {
                 <NavLink
                   key={i}
                   to={item.path}
-                  className='block py-1 text-sm  hover:text-red-300'
-                >
+                  className='block py-1 text-sm  hover:text-red-300'>
                   {item.name}
                 </NavLink>
               ))}

@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom'
 import { CartContext } from '../createContext'
 import { HiShoppingBag } from 'react-icons/hi'
 import { FaRegCircleUser } from 'react-icons/fa6'
+import { FcAlphabeticalSortingAz, FcContacts } from 'react-icons/fc'
 
 
 const Nav = () => {
@@ -36,15 +37,16 @@ const Nav = () => {
   return (
     <div className='sticky top-0 z-50'>
       <nav className=' bg-white shadow-md'>
-    <div className='max-w-7xl mx-auto px-6 py-6 flex items-center gap-5 '>
+    <div className='max-w-7xl mx-auto px-6 py-6 flex items-center md:gap-5 gap-3'>
       
-<div className="relative">
+<div className="relative flex ">
 
   
   <button onClick={() => setShowDropdown(!showDropdown)}
-    className="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Categories
+    className="h-10 w-33 bg-gray-200 rounded hover:bg-gray-300 hidden  md:flex items-center justify-center ">Categories 
   </button>
-
+  {/* <div className='absolute right-2 top-1 '><FcAlphabeticalSortingAz className='text-2xl font-bold'/>
+</div> */}
  
   {
   showDropdown && (
@@ -79,7 +81,7 @@ const Nav = () => {
 
     <div>
       <form action="" className='  '>
-        <div className='relative flex items-center'>
+        <div className='relative hidden md:flex items-center'>
           <CiSearch className='h-10 w-7 absolute left-2 font-bold  '/>
           <input type="search" placeholder='Search item here ' className=' relative   text-center p-2 w-110 h-13 border border-mauve-600 rounded ' />
         
@@ -88,11 +90,11 @@ const Nav = () => {
 
       </form>
     </div>
- <div className=' hidden md:flex gap-4'>
+ <div className=' flex gap-3 md:gap-4'>
     {
         navData.map(ele=>(
           
-            <NavLink to={ele.path} className='p-2 text-lg font-semibold  rounded hover:bg-gray-100 underline '>
+            <NavLink to={ele.path} className='p-2 text-lg hidden md:flex font-semibold  rounded hover:bg-gray-100 underline '>
               {ele.element}  
             </NavLink>
             
@@ -108,14 +110,14 @@ const Nav = () => {
     }
      <div className=' '>
       {
-        <NavLink to={'/login'}><FaRegCircleUser className='h-8 w-8' /></NavLink>
+        <NavLink to={'/login'}><FcContacts className='h-6 w-6 md:h-8 md:w-8' /></NavLink>
       }
       
 
     </div>
     <div className='relative'>
        
-        <NavLink to={'/cart'}><IoCart className='h-10 w-10'/></NavLink>
+        <NavLink to={'/cart'}><IoCart className='h-7 w-7 md:h-10 md:w-10'/></NavLink>
         <span className='absolute -top-2 -right-2 h-5 w-5 rounded bg-amber-500 flex justify-center items-center'>{cartItems.length}</span>
        
 
@@ -123,12 +125,12 @@ const Nav = () => {
 
     <div>
       {
-        <NavLink to={'/cart'}><FaRegHeart className='h-9 w-9'/></NavLink>
+        <NavLink to={'/wishlist'}><FaRegHeart className=' h-6 w-6 md:h-9 md:w-9 '/></NavLink>
       }
     </div>
 
     <div>
-      <button className='w-35  h-10 flex items-center justify-center bg-red-700 text-white text-lg rounded-lg cursor-pointer'>Download App</button>
+      <button className='w-35  h-10 hidden md:flex items-center justify-center bg-red-700 text-white text-lg rounded-lg cursor-pointer'>Download App</button>
     </div>
    
 

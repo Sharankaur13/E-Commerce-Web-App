@@ -57,7 +57,7 @@ const Deals = () => {
       >
         {
           data.map(ele=>(
-            <div key={ele.id} className='p-6'
+            <div key={ele.id} className='p-6 flex justify-center'
             style={{
               minWidth:`${100/cardsToShow}%`
             }}
