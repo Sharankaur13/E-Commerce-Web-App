@@ -13,7 +13,7 @@ const Footer = () => {
 
           {/* subscribe */}
 
-          <div className=' flex flex-col gap-3 md:gap-6 hover:bg-neutral-200 hover:shadow-2xl p-2 '>
+          <div className=' flex flex-col gap-3 md:gap-6 rounded-lg hover:bg-neutral-200 hover:shadow-2xl p-2 '>
             <div className='flex flex-col gap-2'>
             <p className='text-2xl md:text-3xl font-bold'>Subscribe to our awesome emails.</p>
             <p>Get our latest offers and news straight in your inbox.</p>
@@ -31,7 +31,7 @@ const Footer = () => {
 
           {/* download our apps */}
 
-          <div className=' flex flex-col gap-3 md:gap-6 hover:bg-neutral-200 p-2'>
+          <div className=' flex flex-col gap-3 md:gap-6 hover:bg-neutral-200 hover:shadow-lg rounded-lg p-2'>
             <div className='flex flex-col gap-2'>
             <p className='text-xl md:text-3xl font-bold'>Download our apps</p>
             <p>Shop our products and offers on-the-go.</p>

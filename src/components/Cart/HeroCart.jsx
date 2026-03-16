@@ -64,19 +64,64 @@ const {cartItems,removeFromCart}=useContext(CartContext)
 </div>
 
             :
-            <div className='flex gap-5 items-center justify-center '>
+            <div className='flex gap-5 items-center justify-center pt-10 '>
               {
             cartItems.map(ele=>(
-                <div key={ele.id} className='h-[300px] w-50 border flex flex-col h-full items-center justify-center'>
+              <div className='flex '>
+                <div key={ele.id} className='  '>
                     <img 
   src={Array.isArray(ele.img) ? ele.img[0] : ele.img} 
   alt="" 
-  className='w-60 h-70 rounded-lg' 
-/>
-                    <p>Qty:{ele.quantity}</p>
+  className='w-90 h-130 rounded-lg' />
 
-                    <button onClick={()=>removeFromCart(ele.id)} className='p-2 bg-amber-500'>Remove item</button>
+                    
 
+                </div>
+                <div className='flex flex-col gap-4  w-90 p-3 rounded-lg shadow-2xl'>
+        <p>{ele.desc}</p>
+        
+          <div className='flex gap-2 items-center'>
+          <p className='text-2xl font-semibold  border border-gray- text-black '>{ele.price}</p>
+          <p className='text-sm font-bold text-gray-500  line-through'>{ele.preprice}</p>
+          <p className='text-blue-800 font-semibold text-lg'>{ele.off}</p>
+
+
+        </div>
+        <div className='flex gap-2 '>
+         <div className='flex flex-col  items-center border w-15 h-13 bg-gray-50 rounded-2xl cursor-pointer'>
+          <p className=' text-xl font-bold '>{ele.size}</p>
+          <p className='text-sm'>{ele.pr}</p>
+
+         </div>
+          <div className='flex flex-col  items-center border w-15 h-13 bg-gray-50 rounded-2xl cursor-pointer'>
+          <p className=' text-xl font-bold '>{ele.size2}</p>
+          <p className='text-sm'>{ele.pr2}</p>
+
+         </div>
+           <div className='flex flex-col  items-center border w-15 h-13 bg-gray-50 rounded-2xl cursor-pointer'>
+          <p className=' text-xl font-bold '>{ele.size3}</p>
+          <p className='text-sm'>{ele.pr2}</p>
+
+         </div>
+           <div className='flex flex-col  items-center border w-15 h-13 bg-gray-50 rounded-2xl cursor-pointer'>
+          <p className=' text-xl font-semibold '>{ele.size4}</p>
+          <p className='text-sm'>{ele.pr2}</p>
+
+         </div>
+         <div className='flex flex-col  items-center border w-15 h-13 bg-gray-50 rounded-2xl cursor-pointer'>
+          <p className=' text-xl font-semibold '>{ele.size5}</p>
+          <p className='text-sm'>{ele.pr2}</p>
+
+         </div>
+
+
+        </div>
+        <p>Qty:{ele.quantity}</p>
+
+                    <button onClick={()=>removeFromCart(ele.id)} className='p-2 bg-gray-300'>Remove item</button>
+        </div>
+        
+                
                 </div>
             ))
         }
