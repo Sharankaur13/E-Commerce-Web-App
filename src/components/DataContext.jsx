@@ -281,6 +281,19 @@ const DataProvider = ({children}) => {
         btn:"View Product",
         
 },
+{
+        id:17,
+        img:["/colelectronic.jpg"],
+        desc:"FACES CANADA Weightless Matte Finish Foundation - Beige, 15ml , Anti-Ageing",
+        img2:"/Shape.png",
+         preprice:'19,000',
+        price:'18,000',
+        category:'men',
+        off:'3% off onwards',
+        
+        btn:"View Product",
+        
+},
 
     
     
