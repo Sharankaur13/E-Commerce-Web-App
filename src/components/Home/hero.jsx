@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const Hero = () => {
@@ -6,93 +6,82 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const data = [
-    {
-      id:1,
-      img: "/hero3.jpeg",
-      
-     
-    },
-    {
-      id:2,
-      img: "/makeup.jpg",
-     
-    },
-    {
-      id:3,
-      img: "/hh4.jpg",
-    
-    }
+    { id: 1, img: "/image.jpg" },
+    { id: 2, img: "/image2.jpg" },
+    { id: 3, img: "/image3.jpg" },
+    { id: 4, img: "/image3.jpg" },
+    { id: 5, img: "/image4.jpg" },
+    { id: 6, img: "/image5.jpg" },
+    { id: 7, img: "/image6.jpg" },
+    { id: 8, img: "/image7.jpg" }
   ];
 
   const nextSlide = () => {
-    setCurrentIndex(prev => prev === data.length - 1 ? 0 : prev + 1)
-  }
+    setCurrentIndex(prev =>
+      prev === data.length - 1 ? 0 : prev + 1
+    );
+  };
 
   const prevSlide = () => {
-    setCurrentIndex(prev => prev === 0 ? data.length - 1 : prev - 1)
-  }
+    setCurrentIndex(prev =>
+      prev === 0 ? data.length - 1 : prev - 1
+    );
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % data.length);
-    }, 3000);
+      setCurrentIndex(prev => (prev + 1) % data.length);
+    }, 12000);
 
-    return () => clearInterval(timer)
-  }, [])
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <div>
+    <div className="w-full h-[30vh] md:h-[65vh] overflow-hidden relative">
 
-      <div className='relative w-full h-[30vh] md:h-[70vh] overflow-hidden'>
+      {/* SLIDER WRAPPER */}
+      <div
+        className="flex h-full transition-transform duration-700 ease-in-out"
+        style={{
+          transform: `translateX(-${currentIndex * 100}%)`
+        }}
+      >
+        {data.map((item) => (
+          <img
+            key={item.id}
+            src={item.img}
+            alt=""
+            className="w-full h-full object-cover flex-shrink-0"
+          />
+        ))}
+      </div>
 
-        {/* Image */}
-        <img
-          src={data[currentIndex].img}
-          alt=""
-          className='w-full h-full object-cover duration-700'
-        />
+      {/* Left Arrow */}
+      <FaArrowLeft
+        onClick={prevSlide}
+        className="absolute top-1/2 left-3 -translate-y-1/2 h-8 w-8 bg-black/40 p-2 rounded-full text-white cursor-pointer hover:bg-black transition"
+      />
 
-        {/* Text */}
-        <div className='flex flex-col gap-2 absolute top-1/2 left-10 transform -translate-y-1/2'>
-          <h2 className='text-2xl md:text-3xl md:w-96 font-bold text-amber-100'>
-            {data[currentIndex].head}
-          </h2>
+      {/* Right Arrow */}
+      <FaArrowRight
+        onClick={nextSlide}
+        className="absolute top-1/2 right-3 -translate-y-1/2 h-8 w-8 bg-black/40 p-2 rounded-full text-white cursor-pointer hover:bg-black transition"
+      />
 
-          <p className='text-xl md:text-2xl md:w-[500px] font-semibold text-white'>
-            {data[currentIndex].desc}
-          </p>
-        </div>
-
-        {/* Left Arrow */}
-        <FaArrowLeft
-          onClick={prevSlide}
-          className='absolute top-1/2 left-3 -translate-y-1/2 h-8 w-8 bg-black/40 p-2 rounded-full text-white cursor-pointer hover:bg-black transition'
-        />
-
-        {/* Right Arrow */}
-        <FaArrowRight
-          onClick={nextSlide}
-          className='absolute top-1/2 right-3 -translate-y-1/2 h-8 w-8 bg-black/40 p-2 rounded-full text-white cursor-pointer hover:bg-black transition'
-        />
-
-        {/* Slider Lines */}
-        <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex gap-3">
-
-          {data.map((_, id) => (
-            <button
-              key={id}
-              onClick={() => setCurrentIndex(index)}
-              className={`h-[4px] w-10 rounded transition-transform duration-500
-              ${currentIndex ===id ? "bg-white" : "bg-white/50"}`}
-            />
-          ))}
-
-        </div>
-
+     {/* dots */}
+      <div className="absolute bottom-5 right-2 -translate-x-1/2 flex gap-1">
+        {data.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`h-[4px] w-2 rounded 
+              ${currentIndex === index ? "bg-white" : "bg-white/50"}`}
+          />
+        ))}
       </div>
 
     </div>
   );
 };
 
-export default Hero
+export default Hero;

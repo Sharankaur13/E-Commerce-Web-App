@@ -84,7 +84,7 @@ const Collection2 = () => {
 
   return (
     <section>
-      <div className='max-w-7xl mx-auto px-6 pt-6 hidden md:flex justify-between'>
+      <div className='max-w-7xl mx-auto px-6 pt-2 hidden md:flex justify-between'>
 
         {data.map((ele, index) => (
           

@@ -48,7 +48,7 @@ import React from 'react'
 const Login = () => {
   return (
     <div>
-      <div className='flex  p-10'>
+      <div className='flex  justify-center p-10  gap-10'>
 
         {/* left form */}
         <div className='flex flex-col gap-4'>
@@ -70,6 +70,7 @@ const Login = () => {
 
         {/* right side */}
         <div>
+          <img src="/loginpage2.jpg" alt="" className='w-96 h-150'/>
           
         </div>
 

@@ -55,8 +55,7 @@ const Data = () => {
             Data1.map(ele=>(
                 <div key={ele.id} className='   flex flex-col gap-4 items-center bg-white rounded-sm shadow-lg text-center p-3 relative  '>
                   <Link to={`${ele.id}` }> <img 
-  src={Array.isArray(ele.img) ? ele.img[0] : ele.img} 
-  alt="" 
+  src={Array.isArray(ele.img) ? ele.img[0] : ele.img}  alt="" 
   className='h-70 w-70 rounded-lg ' /></Link>
 
   {/* Heart for wishlist */}

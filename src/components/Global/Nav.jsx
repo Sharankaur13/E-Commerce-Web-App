@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { CiSearch } from 'react-icons/ci'
-import { FaRegHeart } from 'react-icons/fa'
+import { FaRegHeart, FaUserCircle } from 'react-icons/fa'
 import { IoCart, IoSearch } from 'react-icons/io5'
 import { NavLink } from 'react-router-dom'
 import { CartContext } from '../createContext'
@@ -20,12 +20,12 @@ const Nav = () => {
     {
       element:'Deal',
       path:'/deal'
-    }
+    },
    
-    // {
-    //     element:'Price',
-    //     path:'/price'
-    // },
+    {
+        element:'Price',
+        path:'/price'
+    },
    
 ]
   
@@ -36,14 +36,14 @@ const Nav = () => {
   
   return (
     <div className='sticky top-0 z-50'>
-      <nav className=' bg-white shadow-md'>
-    <div className='max-w-7xl mx-auto px-6 py-6 flex items-center md:gap-5 gap-3'>
+      <nav className=' bg-slate-900   shadow-md'>
+    <div className='max-w-7xl mx-auto px-6 py-4 flex items-center md:gap-3 gap-3'>
       
 <div className="relative flex ">
 
   
   <button onClick={() => setShowDropdown(!showDropdown)}
-    className="h-10 w-33 bg-gray-200 rounded hover:bg-gray-300 hidden  md:flex items-center justify-center ">Categories 
+    className=" text-white px-2 py-3 hidden  md:flex items-center justify-center ">Categories 
   </button>
   {/* <div className='absolute right-2 top-1 '><FcAlphabeticalSortingAz className='text-2xl font-bold'/>
 </div> */}
@@ -71,9 +71,9 @@ const Nav = () => {
 
     <div className='flex items-center '>
             <div>
-              <HiShoppingBag className='w-10 h-10 text-red-700 ' />
+              <HiShoppingBag className='w-10 h-10 text-amber-50 ' />
             </div>
-            <h2 className='text-2xl font-bold '>SnapDeal</h2>
+            <h2 className='text-2xl font-bold text-gray-400'>SnapDeal</h2>
             
 
 
@@ -82,8 +82,8 @@ const Nav = () => {
     <div>
       <form action="" className='  '>
         <div className='relative hidden md:flex items-center'>
-          <CiSearch className='h-10 w-7 absolute left-2 font-bold  '/>
-          <input type="search" placeholder='Search item here ' className=' relative   text-center p-2 w-110 h-13 border border-mauve-600 rounded ' />
+          <CiSearch className='h-10 w-7 absolute left-2 text-black '/>
+          <input type="search" placeholder='Search item here ' className=' relative text-black   text-center p-2 w-110 h-13  rounded bg-white ' />
         
         </div>
 
@@ -94,7 +94,7 @@ const Nav = () => {
     {
         navData.map(ele=>(
           
-            <NavLink to={ele.path} className='p-2 text-lg hidden md:flex font-semibold  rounded hover:bg-gray-100 underline '>
+            <NavLink to={ele.path} className=' text-lg hidden md:flex font-semibold text-cyan-50 rounded  '>
               {ele.element}  
             </NavLink>
             
@@ -110,22 +110,22 @@ const Nav = () => {
     }
      <div className=' '>
       {
-        <NavLink to={'/login'}><FcContacts className='h-6 w-6 md:h-8 md:w-8' /></NavLink>
+        <NavLink to={'/login'}><FaUserCircle className='h-6 w-6 md:h-8 md:w-8 text-white' /></NavLink>
       }
       
 
     </div>
     <div className='relative'>
        
-        <NavLink to={'/cart'}><IoCart className='h-7 w-7 md:h-10 md:w-10'/></NavLink>
-        <span className='absolute -top-2 -right-2 h-5 w-5 rounded bg-amber-500 flex justify-center items-center'>{cartItems.length}</span>
+        <NavLink to={'/cart'}><IoCart className='h-7 w-7 md:h-10 md:w-10 text-white'/></NavLink>
+        <span className='absolute top-1 left-4  rounded text-red-500 justify-center items-center'>{cartItems.length}</span>
        
 
     </div>
 
     <div>
       {
-        <NavLink to={'/wishlist'}><FaRegHeart className=' h-6 w-6 md:h-9 md:w-9 '/></NavLink>
+        <NavLink to={'/wishlist'}><FaRegHeart className=' h-6 w-6 md:h-9 md:w-9 text-red-600 '/></NavLink>
       }
     </div>
 
