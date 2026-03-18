@@ -10,6 +10,7 @@ import Mens from './App/Mens/Mens'
 import Appdeal from './App/Dealapp/Appdeal'
 import Women from './App/Women/Women'
 import HeroWishlist from './components/Wishlist/Wishlist'
+import Snapdeal from './App/Snapdeal/Snapdeal'
 
 
 
@@ -28,7 +29,11 @@ const router=createBrowserRouter([
     element:<Layout/>,
     children:[
       {
-      path:"/",
+       path:"/",
+       element:<Snapdeal/>
+      },
+      {
+      path:"/home",
       element:<Home/>,
 
       

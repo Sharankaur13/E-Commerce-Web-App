@@ -1,28 +1,25 @@
-import React, { useContext } from 'react'
-import { DataContext } from '../../DataContext'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { useContext } from 'react'
+import { DataContext } from '../DataContext'
 
-const MensClothes = () => {
+const WomensClothe = () => {
+    const {Data1}=useContext(DataContext)
+    const womensProduct = Data1.filter(ele => ele.category==='women')
 
-  const { Data1 } = useContext(DataContext)
-
-  const mensProducts = Data1.filter(ele => ele.category === 'men')
 
   return (
     <div>
-      <div className='grid grid-cols-3 gap-5 m-10'>
-        {
-          mensProducts.map(ele => (
-            <div key={ele.id} className='w-80 flex flex-col gap-4 items-center bg-white rounded-sm shadow-lg text-center p-3'>
-              
-              <Link to={`${ele.id}`}>
+        <div>
+            {
+                womensProduct.map(ele=>(
+                    <div key={ele.id} className='w-80 flex flex-col gap-4 items-center bg-white rounded-sm shadow-lg text-center p-3'>
+                    <Link to={`${ele.id}`}>
                 <img 
                   src={Array.isArray(ele.img) ? ele.img[0] : ele.img} 
                   alt="" 
                   className='w-60 h-70 rounded-lg' 
                 />
               </Link>
-
               <p className='text-sm px-0.5'>{ele.desc}</p>
 
               <div className='flex items-center gap-6'>
@@ -35,19 +32,22 @@ const MensClothes = () => {
                 <div className='flex flex-col'>
                   <p className='text-sm text-gray-400 line-through'>{ele.preprice}</p>
                   <p className='text-sm font-bold text-blue-800 border p-0.5'>{ele.price}</p>
+                </div> 
                 </div>
-              </div>
-
-              <Link to={`${ele.id}`} className='p-2 bg-blue-300 rounded'>
+                 <Link to={`${ele.id}`} className='p-2 bg-blue-300 rounded'>
                 {ele.btn}
               </Link>
+              </div>
 
-            </div>
-          ))
-        }
-      </div>
+                  
+                ))
+            }
+
+        </div>
+      
     </div>
   )
 }
 
-export default MensClothes
+export default WomensClothe
+

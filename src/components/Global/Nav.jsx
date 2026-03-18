@@ -15,7 +15,7 @@ const Nav = () => {
   const navData=[
     {
         element:'Home',
-        path:'/'
+        path:'/home'
     },
     {
       element:'Deal',
@@ -73,7 +73,7 @@ const Nav = () => {
             <div>
               <HiShoppingBag className='w-10 h-10 text-amber-50 ' />
             </div>
-            <h2 className='text-2xl font-bold text-gray-400'>SnapDeal</h2>
+            <NavLink to="/" className='text-2xl font-bold text-gray-400'>SnapDeal</NavLink>
             
 
 

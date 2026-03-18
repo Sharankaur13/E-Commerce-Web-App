@@ -1,11 +1,15 @@
 import React from 'react'
 import { DiHeroku } from 'react-icons/di'
-import Hero4 from '../../components/Women/Women'
+
+import WomensClothe from '../../components/Women/WomensClothe'
+
+import Womenss from '../../components/Women/women'
 
 const Women = () => {
   return (
     <div>
-      <Hero4/>
+      <Womenss/>
+      <WomensClothe/>
     </div>
   )
 }

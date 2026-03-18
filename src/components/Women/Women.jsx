@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {motion} from 'framer-motion'
 
-const Hero4 = () => {
+const Womenss = () => {
 
     const data=[{
       img: "/filbag1.jpg",
@@ -158,4 +158,4 @@ const Hero4 = () => {
   )
 }
 
-export default Hero4
+export default Womenss

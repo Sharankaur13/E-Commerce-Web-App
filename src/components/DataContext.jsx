@@ -8,12 +8,13 @@ const DataProvider = ({children}) => {
   
     {
         id:1,
+         category:'men',
         img:["/shirt.jpeg","/shirtd3.png","/shirtd3.png"],
         desc:"GLORISTAR Denim Regular Fit Solids Half Sleeves Men's Casual Shirt Dark Blue Pack of 1",
         img2:"/Shape.png",
          preprice:'750',
         price:'399Rs',
-        category:'men',
+       
         off:'3% off onwards',
         
         btn:"View Product",
@@ -34,9 +35,11 @@ const DataProvider = ({children}) => {
     },
      {
         id:2,
+        category:'women',
         img:["/saree1.jpg","/sareeb.jpg"],
         desc:"Shimmer Saree With Mirror Work And Chemical Lace And Diomond Hand Work",
         img2:"/Shape.png",
+        
         preprice:'999',
          price:'650Rs',
         btn:"View Product",
@@ -51,9 +54,11 @@ const DataProvider = ({children}) => {
 
      {
         id:3,
+         category:'women',
         img:["/women.jpg"],
         desc:"MOST DEMAND Cotton printed unique design Straight Kurta Set",
         img2:"/Shape.png",
+        
         preprice:'999',
          price:'650Rs',
         btn:"View Product",
@@ -67,8 +72,10 @@ const DataProvider = ({children}) => {
     },
     {
         id:4,
+        category:'men',
         img:"/shoes.jpeg",
         desc:"Men Casual Shoes with Synthetic Upper",
+        
         img2:"/Shape.png",
          preprice:'1150',
          price:'650Rs',
@@ -83,9 +90,11 @@ const DataProvider = ({children}) => {
     },
     {
         id:5,
+        category:'home',
         img:"/decor.jpg",
         desc:"Craft Combo offer Wall Decoration , Ready to  Wall Decoration/Home DecorWall Room Trendy  ItemsWall",
         img2:"/Shape.png",
+        
          preprice:'900',
          price:'599Rs',
         btn:"View Product",
@@ -99,10 +108,12 @@ const DataProvider = ({children}) => {
     },
      {
         id:6,
+        category:["men","women"],
         img:"/purse.png",
         desc:"PLAYYBAGS Kids Bag, Baby, Velvet Bag & School Backpack | School Bag (Mickey Mice) 10 L",
         img2:"/Shape.png",
          preprice:'900',
+         
          price:'800Rs',
         btn:"View Product",
          size:'S',
@@ -115,11 +126,13 @@ const DataProvider = ({children}) => {
     },
       {
         id:7,
+        category:'home',
         img:"/showrack.jpg",
         desc:"Bamboo shoe rack, books rack, kitchen rack(4shelf)",
         img2:"/Shape.png",
          preprice:'900',
          price:'500Rs',
+         
         btn:"View Product",
          size:'S',
           size2:'M',
@@ -132,9 +145,11 @@ const DataProvider = ({children}) => {
     },
      {
         id:8,
+        category:'kids',
         img:"/kid1.jpg",
         desc:"Baby Panda Winter Hoodie & Jogger",
         img2:"/Shape.png",
+        
          preprice:'900',
          price:'800Rs',
         btn:"View Product",
@@ -294,6 +309,20 @@ const DataProvider = ({children}) => {
         btn:"View Product",
         
 },
+{
+  id:18,
+        img:["/homeImage1.jpg","/homeimage12.jpg","/homeimage13.jpg"],
+        desc:"FACES CANADA Weightless Matte Finish Foundation - Beige, 15ml , Anti-Ageing",
+        img2:"/Shape.png",
+         preprice:'190',
+        price:'180',
+        category:'men',
+        off:'3% off onwards',
+        
+        btn:"View Product",
+
+
+},
 
     
     
@@ -309,6 +338,7 @@ const DataProvider = ({children}) => {
 
 {
         id:14,
+        category:'kid',
         img:"/women2.jpg",
         desc:"3d Water bottle asthetic and top material ",
         img2:"/Shape.png",
